@@ -16,8 +16,6 @@ from torch.overrides import (
     has_torch_function_unary,
     has_torch_function_variadic,
 )
-from torch._rearrange import rearrange as _rearrange_impl
-
 
 
 __all__ = [
@@ -2243,6 +2241,3 @@ lu.__doc__ = _lu_impl.__doc__
 
 def align_tensors(*tensors):
     raise RuntimeError("`align_tensors` not yet implemented.")
-
-def rearrange(tensor: torch.Tensor, pattern: str) -> torch.Tensor:
-    return _rearrange_impl(tensor, pattern)
